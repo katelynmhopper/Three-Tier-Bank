@@ -1,0 +1,38 @@
+body{
+    background-image: url('saving-money-piggybank.png');
+    background-size: cover; 
+    
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.callout{
+    font-size: larger;
+    outline: auto;
+    outline-color: grey;
+    text-align: justify;
+}
+
+.table{
+    font-size: xx-large;
+    font: bold;
+    backdrop-filter: blur(10px);
+}
+
+
+.nav-link:focus {
+    background: paleturquoise;
+    border: 2px;
+    border-color: black;
+    size: 500%;
+
+}
+.navbar-brand:hover {
+    display: contents;
+    color: blue;
+}
