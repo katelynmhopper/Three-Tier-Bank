@@ -10,6 +10,7 @@ function Spa(){
             <Route path="/withdraw/" component={Withdraw} />
             <Route path="/balance/" component={Balance} />
             <Route path="/alldata/" component={AllData} />
+            <br/> 
             </UserContext.Provider>
         </HashRouter>
     );
