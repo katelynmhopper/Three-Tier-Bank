@@ -9,7 +9,7 @@ function CreateAccount(){
          status={status}
          body={show ? 
             <CreateForm setShow={setShow}/> : 
-            <CreateMsg setSho={setShow}/>}
+            <CreateMsg setShow={setShow}/>}
         />
     )
 }
@@ -29,13 +29,22 @@ function CreateForm(props){
 
     function handle(){
         console.log(name,email,password); 
-        const url = `/account/create/${name}/${email}/${password}`;
-        (async () => {
-            var res = await fetch(url); 
-            var data = await res.json(); 
-            console.log(data); 
-        })(); 
-        props.setShow(false); 
+        (async () => { fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: {
+                "name": " ", 
+                "email": " ", 
+                "password": " "
+            }})
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
+        setForm({ name: "", position: "", level: "" });
+        });
     }
 
     return(<>
