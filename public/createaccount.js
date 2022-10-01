@@ -30,12 +30,12 @@ function CreateAccount(){
     const [password, setPassword] = React.useState('');
     
     function handle(){
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:3000/auth/signup", {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, email, password })})
+    body: JSON.stringify({ email, password })})
     .then((res) => res.status === 200 && props.setShow(false))
     .catch(error => {
     window.alert(error);

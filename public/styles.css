@@ -1,6 +1,9 @@
 body{
     background-image: url('saving-money-piggybank.png');
     background-size: cover; 
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
     
 }
 

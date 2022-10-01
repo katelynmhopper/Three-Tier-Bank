@@ -22,4 +22,4 @@ const updateUser = (req, res) => {
         .catch(err => res.send(err))
 }
 
-module.exports = {addUser, getAllUsers, updateUser};
+module.exports = { getAllUsers, updateUser};

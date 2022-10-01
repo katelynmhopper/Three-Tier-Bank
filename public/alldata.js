@@ -1,19 +1,9 @@
 function AllData(){
-    const [data, setData] = React.useState('');
-    React.useEffect(() => {
-        // fetch all acounts from API
-        fetch('/account/all')
-            .then(response => response.json())
-            .then(data=> {
-                console.log(data);
-                setData(JSON.stringify(data)); 
-            });
-    }, []);
-    
+
+
     return (
             <>
-            <h5> All Data </h5>
-            {data}
+            <h5> All Data ( need to get from database ) </h5>
             </>
         ); 
 }

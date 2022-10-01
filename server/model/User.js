@@ -1,10 +1,5 @@
-const mongoose = require('mongoose');
-
+const mongoose = require('mongoose')
 const User = mongoose.model('User', {
-    name: {
-        type: String,
-        required: true, 
-    },
     email: {
         type: String,
         required: true,
@@ -13,6 +8,13 @@ const User = mongoose.model('User', {
         type: String,
         minLength: 8,
     },
+    balance:{
+        type: Number
+    }
+    
 })
 
+
+
 module.exports = User;
+

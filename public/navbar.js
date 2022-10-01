@@ -35,6 +35,10 @@ function NavBar(){
                     <li className="nav-item">
                         <a className="nav-link" id="#/alldata/" href="#/alldata/">All Data</a>
                     </li>
+                    
+                    <span className="navbar-text">
+                        User
+                    </span>
                 </ul>
             </div>
             </nav>
