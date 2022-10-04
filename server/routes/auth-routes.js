@@ -71,10 +71,12 @@ const authenticationMiddleware = (req, res, next) => {
 }
 
 router.get('/balance', authenticationMiddleware, async (req,res) => {
-  console.log(req.body.balance); 
-  const user = await User
-    .findOne({ id: req.body.id })
-    .then((results) => res.send({balance: req.body.balance}))
+  const user = 
+  User
+  .findOne({ id: req.body.id})
+  .then(users => res.send(users))
+  .catch(err => res.send(err))
+    console.log('balance', res.body);
 })
 
 router.put('/deposit', authenticationMiddleware, async(req,res) => {

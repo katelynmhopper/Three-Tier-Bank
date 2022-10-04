@@ -6,7 +6,7 @@ function NavBar(){
         <>
     <div container>
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
-            <a className="navbar-brand" href="#">Bank of Hooper</a>
+            <a className="navbar-brand" href="#">Bank of Hopper</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aira-label="Toggle navigation" >
             <span className="navbar-toggler-icon"></span>
             </button>
