@@ -3,10 +3,9 @@ const cors = require("cors");
 const app = express(); 
 const userRouter = require("./server/routes/user-route");
 require('./server/db/mongoose')
-const port = 3000; 
+const port = 7000; 
 const authRouter = require('./server/routes/auth-routes');
 const cookieParser = require("cookie-parser");
-const admin = require('./admin')
 
 // //used to serve static files from public directory
 // app.use(express.static('public')); 

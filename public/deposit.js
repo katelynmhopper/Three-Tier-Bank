@@ -6,6 +6,21 @@ function Deposit(){
     const [balance, setBalance]   = React.useState(ctx.users[0].balance);
     const [disabled, setDisabled] = React.useState(true);
   
+    function handle(){
+      fetch("http://localhost:3000/auth/deposit", {
+      method: "PUT",
+      headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ balance })})
+      .then((res) => alert("Success!") && clearForm())
+      .catch(error => {
+      window.alert(error);
+      return;
+      });
+      }  
+      
+    
   
     const validate = amount => {
         if (isNaN(amount)) {
@@ -28,6 +43,7 @@ function Deposit(){
   setBalance(Number(balance) + Number(amount));
   setShow(false);
   setStatus('');
+  handle(balance)
   }
   
   function clearForm(){
@@ -47,7 +63,7 @@ function Deposit(){
   
     return (
       <Card
-        bgcolor="success"
+        bgcolor="Light"
         header="Deposit"
         status={status}
         body={show ? (  

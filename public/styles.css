@@ -1,12 +1,7 @@
 body{
-    background-image: url('saving-money-piggybank.png');
+    background-image: url('happy-couple-using-laptop-credit-card-while-shopping-online-home.jpg');
     background-size: cover; 
-    display: flex;
-    flex: auto;
-    flex-wrap: wrap;
-    
 }
-
 
 footer{
     position: absolute;
@@ -28,14 +23,11 @@ footer{
 }
 
 
+
 .nav-link:focus {
-    background: paleturquoise;
+    background: linen;
     border: 2px;
     border-color: black;
     size: 500%;
 
-}
-.navbar-brand:hover {
-    display: contents;
-    color: blue;
 }

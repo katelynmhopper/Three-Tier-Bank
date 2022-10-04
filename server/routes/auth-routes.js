@@ -28,7 +28,12 @@ router.post("/login", async (req, res) => {
     }
   });
 
-router.get('/login', (req, res) => {
+router.get('/users', async (req, res) => {
+  const user = 
+  User
+  .find({})
+  .then(users => res.send(users))
+  .catch(err => res.send(err))
     console.log('user has access');
 })
 
@@ -49,7 +54,6 @@ router.post('/signup', async (req, res) => {
         res.status(500).send("Internal Sever Error");
     }
 })
-
 const authenticationMiddleware = (req, res, next) => {
   if (!req.cookies.token) {
     res.send(403)
@@ -65,6 +69,31 @@ const authenticationMiddleware = (req, res, next) => {
     })
   }
 }
+
+router.get('/balance', authenticationMiddleware, async (req,res) => {
+  console.log(req.body.balance); 
+  const user = await User
+    .findOne({ id: req.body.id })
+    .then((results) => res.send({balance: req.body.balance}))
+})
+
+router.put('/deposit', authenticationMiddleware, async(req,res) => {
+  console.log(req.body); 
+   const user = await User
+    .findOneAndUpdate({ id: req.body.id}, {balance: req.body.balance})
+    .then((results) => res.send(results))
+    .catch(err => res.send(err))
+  })
+
+  router.put('/withdraw', authenticationMiddleware, async(req,res) => {
+    console.log(req.body); 
+     const user = await User
+      .findOneAndUpdate({ id: req.body.id}, {balance: req.body.balance})
+      .then((results) => res.send(results))
+      .catch(err => res.send(err))
+    })
+  
+
 
 router.get('/secret', authenticationMiddleware, (req, res) => {
     console.log('req.userId', req.userId)

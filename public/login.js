@@ -1,5 +1,3 @@
-const User = require("../src/routes/model/User");
-
 function Login(){
     const [show, setShow]           =React.useState(true);
     const [status, setStatus]       =React.useState(''); 
@@ -47,7 +45,7 @@ function Login(){
 
  return (
         <Card
-            bgcolor="info card title"
+            bgcolor="secondary"
             header="Login"
             status={status}
             body={
@@ -56,8 +54,8 @@ function Login(){
                     <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
                     Password<br/>
                     <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                    <button type="submit" className="btn btn-light" onClick={handle}>Login</button>
-                    <button id = "logout">Logout</button> 
+                    <button type="submit" className="btn btn-light mr-1" onClick={handle}>Login</button>
+                    <button id = "logout" className="btn btn-light mr-1">Logout</button> 
                     </>
 
  }

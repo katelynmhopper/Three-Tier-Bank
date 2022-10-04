@@ -1,5 +1,22 @@
-function Spa(){
+import {User} from './User';
+const [user, setUser]  = React.useState();
+
+function App(){
+    
+    const fetchUser = () => {
+        fetch('/users') 
+        .then((res) => res.json())
+        .then((data) => setUsers(data))
+    }
+    
+    useEffect(() => {
+        fetchUser ()
+    }, []);
+    
     return (
+    <div className="App">
+        <h1> Welcome to your bank! </h1>
+        {users.length && users.map(user => <User user={user} key={user._id} /> )}
         <HashRouter>
             <NavBar/>
             <UserContext.Provider value={{users: [{name: 'katie', email: 'khopper@gmail.com', password: 'secret', balance: 0}]}}>
@@ -13,10 +30,11 @@ function Spa(){
             <br/> 
             </UserContext.Provider>
         </HashRouter>
+    </div>
     );
 } 
 
 ReactDOM.render(
-    <Spa/>,
+    <App/>,
     document.getElementById('root')
 )
