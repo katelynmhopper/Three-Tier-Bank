@@ -29,10 +29,8 @@ console.log('state', loggedin)
         }  
         
         console.log('>>>', users);
-        console.log('email passed?', email )
-        
-        const username = email; 
-        console.log('username', username)
+        console.log('>>>', email )
+    
         
 
     function validate(field, label){
@@ -71,8 +69,8 @@ console.log('state', loggedin)
                     <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
                     <button type="submit" className="btn btn-light mr-1" onClick={handle}>Login</button>
                     <button id = "logout" className="btn btn-light mr-1" onClick={LogOut}>Logout</button> 
+                    <h1> Welcome! {email}</h1>
                     </>
-
                     }
         
         />

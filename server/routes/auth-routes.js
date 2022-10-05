@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const express = require('express');
 const router = express.Router(); 
-const {postCookie, } = require('../controller/auth-controller')
 const User = require('../model/User');
 const jwt = require ('jsonwebtoken'); 
 
