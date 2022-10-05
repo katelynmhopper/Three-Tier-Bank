@@ -2,7 +2,7 @@ function Balance(){
 
   const ctx = React.useContext(UserContext);  
   const [status, setStatus]     = React.useState('');
-  const [balance, setBalance]   = React.useState(ctx.users[0].balance);
+  const [balance, setBalance]   = React.useState(ctx.user.balance);
   
   
   return (

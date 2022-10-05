@@ -1,31 +1,38 @@
 function Login(){
+    const ctx = React.useContext(UserContext);
+    const [users, setUsers] = React.useState(null);  
+    
     const [show, setShow]           =React.useState(true);
     const [status, setStatus]       =React.useState(''); 
     const [email, setEmail]        =React.useState('');
     const [password, setPassword]  =React.useState('');
+    const [loggedin, setLoggedin] = React.useState(false); 
 
-    function loginMSG(props){
-        return(<>
-        <h5>Success</h5>
-        <button type="submit"
-        className = "btn btn-light"
-        onClick={() => props.setShow(true)}> Welcome {User} </button>
-        </>);
-        }
+console.log('state', loggedin)
 
     function handle(){
-        fetch("http://localhost:3000/auth/login", {
+        fetch("http://localhost:7000/auth/login", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password })})
-        .then((res) => alert("Success!") && clearForm())
+        .then(res => res.json())
+        .then(res => setLoggedin(true))
+        .then(users => setUsers(users))
+        .then(res => setEmail(email))
+        .then(res => alert('Success') && clearForm())
         .catch(error => {
         window.alert(error);
         return;
         });
         }  
+        
+        console.log('>>>', users);
+        console.log('email passed?', email )
+        
+        const username = email; 
+        console.log('username', username)
         
 
     function validate(field, label){
@@ -43,7 +50,15 @@ function Login(){
         setShow(true);
     }
 
+    function LogOut() {
+       setLoggedin(false); 
+       window.alert('Logged Out')
+       clearForm()
+
+    }
+
  return (
+    <UserContext.Provider value={{users: users}}>
         <Card
             bgcolor="secondary"
             header="Login"
@@ -55,11 +70,12 @@ function Login(){
                     Password<br/>
                     <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
                     <button type="submit" className="btn btn-light mr-1" onClick={handle}>Login</button>
-                    <button id = "logout" className="btn btn-light mr-1">Logout</button> 
+                    <button id = "logout" className="btn btn-light mr-1" onClick={LogOut}>Logout</button> 
                     </>
 
- }
+                    }
         
         />
+        </UserContext.Provider>
     )
 }

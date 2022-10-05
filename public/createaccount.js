@@ -30,7 +30,7 @@ function CreateAccount(){
     const [password, setPassword] = React.useState('');
     
     function handle(){
-    fetch("http://localhost:3000/auth/signup", {
+    fetch("http://localhost:7000/auth/signup", {
     method: "POST",
     headers: {
     "Content-Type": "application/json",

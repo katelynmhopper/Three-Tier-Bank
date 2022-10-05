@@ -1,6 +1,9 @@
-
 function NavBar(){
+    const ctx = React.useContext(UserContext);
+    const [users, setUsers] = React.useState(null); 
 
+
+ console.log('>>>navbaruser', users)
 
     return(
         <>
@@ -36,6 +39,9 @@ function NavBar(){
                         <a className="nav-link" id="#/alldata/" href="#/alldata/">All Data</a>
                     </li>
                 </ul>
+                <div className="container-fluid">
+                    <span className="navbar-brand mb-0 h1"></span>
+                </div>
             </div>
             </nav>
             </div>
