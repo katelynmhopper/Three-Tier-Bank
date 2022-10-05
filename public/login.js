@@ -28,8 +28,7 @@ console.log('state', loggedin)
         });
         }  
         
-        console.log('>>>', users);
-        console.log('>>>', email )
+        console.log('>>>', ctx);
     
         
 
