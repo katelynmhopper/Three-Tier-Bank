@@ -7,7 +7,7 @@ function Spa() {
     };
     
     function handle() {
-    fetch('https://git.heroku.com/katelyn-hopperfullstacbanking.git', {
+    fetch("http://localhost:7000/users", {
     method: "GET",
     headers: {
     "Content-Type": "application/json",
@@ -38,7 +38,6 @@ function Spa() {
     <Route path="/deposit/" component={Deposit} />
     <Route path="/withdraw/" component={Withdraw} />
     <Route path="/balance/" component={Balance} />
-    <Route path="/nabar/" component={NavBar} />
     <br />
     </UserContext.Provider>
     </HashRouter>

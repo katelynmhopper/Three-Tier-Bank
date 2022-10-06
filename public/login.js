@@ -6,6 +6,7 @@ function Login() {
     const [status, setStatus] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+
     
     function loginMSG(props) {
     return (
@@ -32,7 +33,8 @@ function Login() {
     body: JSON.stringify({ email, password }),
     })
     .then((res) => res.json())
-    .then((res) => ctx.setUser({ user: res }) && setLoggedin(true))
+    .then((res) => ctx.setUser({ user: res }) )
+    .then((res)=> alert('Success'))
     .catch((error) => {
     window.alert(error);
     return;
@@ -55,7 +57,7 @@ function Login() {
     }
     
     function LogOut() {
-    setLoggedin(false);
+
     window.alert("Logged Out");
     clearForm();
     }
