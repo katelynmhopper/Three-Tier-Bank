@@ -5,28 +5,28 @@ const User = require('../model/User');
 const jwt = require ('jsonwebtoken'); 
 
 router.post("/login", async (req, res) => {
-    try {
-      const user = await User.findOne({ email: req.body.email });
-      const token = jwt.sign({ id: user.id}, "secret")
-      console.log(user);
-      if (user) {
-        const cmp = await bcrypt.compare(req.body.password, user.password);
-        if (cmp) {
-          //   ..... further code to maintain authentication like jwt or sessions
-          res.send(user)
-          res.sendStatus(200).cookie("token", token )
-          console.log('>>>>>>>>>>', token)
-        } else {
-          res.send("Wrong username or password.");
-        }
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    const token = jwt.sign({ id: user.id}, "secret")
+    console.log(user);
+    if (user) {
+      const cmp = await bcrypt.compare(req.body.password, user.password);
+      if (cmp) {
+        //   ..... further code to maintain authentication like jwt or sessions
+        res.send(user);
+        res.status(200).cookie("token", token );
+        console.log('>>>>>>>>>>', token)
       } else {
         res.send("Wrong username or password.");
       }
-    } catch (error) {
-      console.log(error);
-      res.status(500).send("Internal Server error Occured");
+    } else {
+      res.send("Wrong username or password.");
     }
-  });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Internal Server error Occured");
+  }
+});
 
 router.get('/users', async (req, res) => {
   const user = 

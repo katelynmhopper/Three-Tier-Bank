@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+ app: 
+  image: "mongodb"
+  command: "npm install && nodemon index1.js"
+  ports:
+      - 7000:7000
+  working_dir: /server
+  volumes:
+      - ./:/app
+
+volumes:
+  bank-data:

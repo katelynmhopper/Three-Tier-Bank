@@ -30,9 +30,7 @@ function NavBar(){
                         <a className="nav-link" id="#/balance/" href="#/balance/">Balance</a>
                     </li>   
 
-                    <li className="nav-item">
-                        <a className="nav-link" id="#/alldata/" href="#/alldata/">All Data</a>
-                    </li>
+                    
                 </ul>
     
             </div>

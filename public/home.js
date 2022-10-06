@@ -10,8 +10,8 @@ function Home(){
       We are here for all your banking needs.
       <br/>
       <br/>
-      <a href="#/CreateAccount/" className="btn btn-dark stretched-link mr-1" >Sign Up</a> 
-      <a href="#/login/" className="btn btn-dark stretched-link mr-1">Login</a>
+      <a href = "#/CreateAccount/" className="btn btn-dark  mr-2"> Create Account</a>
+      <a href="#/login/" className="btn btn-dark  mr-2">Login</a>
       </div>
     />    
   );  

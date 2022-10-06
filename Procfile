@@ -1,2 +1,2 @@
-web: node index1.js;
+web: node /server/index1.js;
 
