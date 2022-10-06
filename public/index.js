@@ -7,7 +7,7 @@ function Spa() {
     };
     
     function handle() {
-    fetch("http://localhost:7000/users", {
+    fetch('https://git.heroku.com/katelyn-hopperfullstacbanking.git', {
     method: "GET",
     headers: {
     "Content-Type": "application/json",
