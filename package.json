@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install",
-    "start": "npx http_server.js, nodemon index1.js"
+    "start": "nodemon index1.js"
   },
   "keywords": [],
   "author": "",
