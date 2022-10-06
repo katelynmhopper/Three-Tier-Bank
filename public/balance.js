@@ -2,13 +2,12 @@ function Balance(){
 
   const ctx = React.useContext(UserContext);  
   const [status, setStatus]     = React.useState('');
-  const [balance, setBalance]   = React.useState(ctx.user.balance);
+  const [balance, setBalance]   = React.useState(ctx.users[0].balance);
   
   
   return (
       <Card
-        bgcolor="Light"
-        txtcolor="black"
+        bgcolor="secondary"
         header="You're Account Balance"
         status={status}
         body={(<>

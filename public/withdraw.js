@@ -5,7 +5,7 @@ function Withdraw(){
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
     const [withdraw, setWithdraw]   = React.useState('');
-    const [balance, setBalance] = React.useState(ctx.users.balance);
+    const [balance, setBalance] = React.useState(ctx.users[0].balance);
     const [disabled, setDisabled] = React.useState(true);
   
   
@@ -30,7 +30,7 @@ function Withdraw(){
     setBalance(Number(balance) - Number(amount));
     setShow(false);
     setStatus('');
-    ctx.users.balance -= Number(amount)
+    ctx.users[0].balance -= Number(amount)
     }
 
   function clearForm(){
@@ -50,8 +50,7 @@ function Withdraw(){
   
     return (
       <Card
-        bgcolor="Light"
-        txtcolor="black"
+      bgcolor="secondary"
         header="Withdraw"
         status={status}
         body={show ? (  

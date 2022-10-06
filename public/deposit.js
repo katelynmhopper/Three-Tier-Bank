@@ -1,28 +1,11 @@
 function Deposit(){
-   const ctx = React.useContext(UserContext);
+  const ctx = React.useContext(UserContext);  
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
     const [deposit, setDeposit]   = React.useState('');
-    const [balance, setBalance]   = React.useState(ctx.user.balance);
+    const [balance, setBalance]   = React.useState(ctx.users[0].balance);
     const [disabled, setDisabled] = React.useState(true);
   
-    function handle(){
-      fetch("http://localhost:7000/auth/deposit", {
-      method: "PUT",
-      headers: {
-      "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ balance })})
-      .then((res) => setBalance(res))
-      .catch(error => {
-      window.alert(error);
-      return;
-      });
-    }
-
-      console.log('depoosit', ctx)
-      
-    
   
     const validate = amount => {
         if (isNaN(amount)) {
@@ -45,7 +28,7 @@ function Deposit(){
   setBalance(Number(balance) + Number(amount));
   setShow(false);
   setStatus('');
-  ctx.users.balance += Number(amount);
+  ctx.users[0].balance += Number(amount);
   }
   
   function clearForm(){
@@ -65,16 +48,15 @@ function Deposit(){
   
     return (
       <Card
-        bgcolor="Light"
-        txtcolor="black"
+        bbgcolor="secondary"
         header="Deposit"
         status={status}
         body={show ? (  
                 <>
-                <div className="callout">Balance: ${ctx.toFixed(2)}</div> <br/>
+                <div className="callout">Balance: ${balance.toFixed(2)}</div> <br/>
                 How much do you want to deposit?<br/>
                 <input type="deposit" className="form-control" id="deposit" placeholder="Deposit Amount $" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/> <br/>
-                <button type="submit" className="btn btn-dark" onClick={() => handle()} disabled={disabled}>Deposit</button>
+                <button type="submit" className="btn btn-dark" onClick={() => makeDeposit(deposit)} disabled={disabled}>Deposit</button>
                 </>
               ):(
                 <>

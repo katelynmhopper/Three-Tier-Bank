@@ -1,7 +1,6 @@
 function CreateAccount(){
     const [show, setShow] =React.useState(true);
-    const [status, setStatus] =React.useState('');
-    
+    const [user, setUser] = React.useState(null);      
     console.log({show})
     
     return (
