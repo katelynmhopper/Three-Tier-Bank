@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express(); 
 const userRouter = require("./server/routes/user-route");
 require('./server/db/mongoose')
-const port = 7000; 
+const port = process.env.PORT || 7000; 
 const authRouter = require('./server/routes/auth-routes');
 const cookieParser = require("cookie-parser");
 
