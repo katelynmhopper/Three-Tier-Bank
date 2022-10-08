@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd server && npm run build",
-    "install": "cd server && npm install"
+    "build": "cd server ",
+    "install": "cd server "
   },
   "keywords": [],
   "author": "",
