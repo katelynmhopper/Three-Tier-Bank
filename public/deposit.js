@@ -3,7 +3,7 @@ function Deposit(){
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
     const [deposit, setDeposit]   = React.useState('');
-    const [balance, setBalance]   = React.useState(ctx[0].balance);
+    const [balance, setBalance]   = React.useState(ctx.users[0].balance);
     const [disabled, setDisabled] = React.useState(true);
   
   
@@ -28,7 +28,7 @@ function Deposit(){
   setBalance(Number(balance) + Number(amount));
   setShow(false);
   setStatus('');
-  ctx[0].balance += Number(amount);
+  ctx.users[0].balance += Number(amount);
   }
   
   function clearForm(){
@@ -48,8 +48,7 @@ function Deposit(){
   
     return (
       <Card
-        bbgcolor="secondary"
-        txt = "black"
+        bgcolor="success"
         header="Deposit"
         status={status}
         body={show ? (  
