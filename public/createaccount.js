@@ -29,7 +29,7 @@ function CreateAccount(){
     const [password, setPassword] = React.useState('');
     
     function handle(){
-    fetch("http://localhost:7000/auth/signup", {
+    fetch("https://git.heroku.com/katelyn-hopperfullstacbanking.git/auth/signup", {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
