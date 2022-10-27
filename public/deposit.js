@@ -48,7 +48,7 @@ function Deposit(){
   
     return (
       <Card
-        bbgcolor="secondary"
+        bgcolor="secondary"
         txt = "black"
         header="Deposit"
         status={status}
